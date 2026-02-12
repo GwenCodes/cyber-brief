@@ -1,10 +1,16 @@
+import Header from './Header';
+
 function App() {
   return (
-    <>
-      <h1>Cyber Brief</h1>
-      <p>Welcome to the Cyber Brief application</p>
-    </>
-  )
+    <div>
+      <Header />
+
+      <main style={{ paddingTop: 64, paddingLeft: 20 }}>
+        <h1>Headline</h1>
+        <p>Welcome to the Cyber Brief newletter</p>
+      </main>
+    </div>
+  );
 }
 
-export default App
+export default App;
