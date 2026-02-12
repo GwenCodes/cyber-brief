@@ -1,4 +1,4 @@
-import logoImage from './img/cb-logo.png';
+import logoImage from './img/cb-logo.png?url';
 
 const Logo = () => {
   return (
