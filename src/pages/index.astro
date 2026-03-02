@@ -1,26 +1,40 @@
-import Header from '../../../src/Header';
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
 
-function App() {
-  return (
-    <div>
-      <Header />
+// Import the article hero image
+import heroImage from '../assets/img/The-Enforcement-Year-rect.png';
+---
 
-      <main style={{ paddingTop: 64, paddingLeft: 20 }}>
-        <h1>Headline</h1>
-        <p>Welcome to the Cyber Brief newsletter</p>
-      </main>
+<Layout title="The Enforcement Year | CYBER-BRIEF">
+  <main>
+    <section class="news-article pt-12 pb-24 briefing-gradient">
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="bg-light p-7 md:p-20 rounded-3xl shadow-sm border border-slate-200">
+          
+          <div class="text-center mb-16">
+            <span class="font-ibm font-bold text-[#EE6C4D] text-sm uppercase tracking-[0.3em] mb-4 block">
+              Strategic Briefing
+            </span>
+            <h1 class="hero-title">The Enforcement Year</h1>
+          </div>
 
-      <section className="featureSection">
-        <div className="feature-container">
-          <h2 className="feature-title">Featured Briefing</h2>
-          <p className="feature-text">
-            Stay ahead with curated insights on cybersecurity trends, threat intelligence,
-            and the latest developments shaping the digital landscape.
-          </p>
+          <div class="w-full max-w-5xl mx-auto px-4 mb-16">
+            <div class="aspect-square md:aspect-video w-full overflow-hidden rounded-lg shadow-xl">
+              <Image 
+                src={heroImage} 
+                alt="Strategic Briefing Visual" 
+                class="w-full h-full object-cover"
+                loading="eager" 
+              />
+            </div>
+          </div>
+
+          <article class="content-body text-slate-800 font-sans antialiased">
+            </article>
+
         </div>
-      </section>
-    </div>
-  );
-}
-
-export default App;
+      </div>
+    </section>
+  </main>
+</Layout>
