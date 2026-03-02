@@ -1,3 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Roboto:wght@400;700;900&family=Blinker:wght@400;600;700&display=swap");
+
+@theme {
+  /* Your custom theme variables can go here later! */
+}
+:root {
+  --cb-bg-main: #0b0f1a;
+  --cb-bg-surface: #1e293b;
+  --cb-accent: #ee6c4d;
+  --cb-text-primary: #ffffff;
+  --cb-text-secondary: #94a3b8;
+  --cb-border-muted: rgba(255, 255, 255, 0.05);
+  --cb-hover-safe: rgb(7, 211, 44);
+}
+
 /* Sticky Footer Reset */
 html,
 body {
