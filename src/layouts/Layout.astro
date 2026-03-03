@@ -1,61 +1,37 @@
 ---
-// src/layouts/Layout.astro
-import { Image } from 'astro:assets';
-import logoImage from '../assets/img/cyber-brief-logo-corral.png';
-
-// Import your CSS styles
 import '../styles/index.css';
-import '../styles/reality-section.css';
-import '../styles/signup-section.css';
-import '../styles/global.css';
 
-// Create a URL for the favicon from your asset
-const faviconUrl = logoImage.src;
+interface Props {
+    title?: string;
+}
+
+const { title = "Cyber-Brief | Modern Defense" } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <link rel="icon" type="image/png" href={faviconUrl} />
-    <link rel="apple-touch-icon" href={faviconUrl} />
-    
-    <meta name="generator" content={Astro.generator} />
-    <title>CYBER-BRIEF | Modern Defense Intelligence</title>
-				
-	</head>
-	<body class="main-bg text-white antialiased">
-		
-		<header class="py-6 border-b border-white/5">
-			<div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
-				<a href="/" class="flex items-center gap-3 font-blinker font-black text-xl uppercase tracking-widest hover:opacity-80 transition-opacity">
-					<Image src={logoImage} alt="CYBER-BRIEF logo" class="h-7 w-auto" />
-					CYBER-BRIEF
-				</a>
-				<nav class="flex gap-6 md:gap-8 items-center font-ibm text-xs tracking-widest text-slate-500">
-					<a href="/intelligence" class="hover:text-white transition-colors uppercase">intelligence</a>
-					<a href="/about" class="hover:text-white transition-colors uppercase">about</a>
-				</nav>
-			</div>
-		</header>
-
-		<main>
-			<slot />
-		</main>
-
-		<footer class="py-12 bg-dark border-t border-white/5 text-center mt-auto">
-			<div class="max-w-6xl mx-auto px-6">
-				<p class="text-[10px] text-slate-600 uppercase tracking-[0.3em] mb-4">
-					Strategic Intelligence for the Modern Defense Sector
-				</p>
-				<p class="text-[10px] text-slate-700 uppercase tracking-widest">
-					© 2026 CYBER-BRIEF. All Rights Reserved.
-				</p>
-			</div>
-		</footer>
-
-		<script is:inline src="/signup-logic.js"></script>
-	</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <link rel="icon" type="image/png" href="/cyber-brief-logo-corral.png" />
+    </head>
+    <body>
+        <header class="site-header">
+            <nav class="nav-container">
+                <a href="/" class="nav-logo">
+                    <img src="/cyber-brief-logo-corral.png" alt="Shield" class="logo-img" />
+                    <span class="logo-text">CYBER-BRIEF</span>
+                </a>
+                <div class="nav-links">
+                    <a href="/intelligence" class="nav-link">intelligence</a>
+                    <a href="/about" class="nav-link">about</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <slot />
+        </main>
+    </body>
 </html>

@@ -1,40 +1,33 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-
-// Import the article hero image
-import heroImage from '../assets/img/The-Enforcement-Year-rect.png';
 ---
 
-<Layout title="The Enforcement Year | CYBER-BRIEF">
-  <main>
-    <section class="news-article pt-12 pb-24 briefing-gradient">
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="bg-light p-7 md:p-20 rounded-3xl shadow-sm border border-slate-200">
-          
-          <div class="text-center mb-16">
-            <span class="font-ibm font-bold text-[#EE6C4D] text-sm uppercase tracking-[0.3em] mb-4 block">
-              Strategic Briefing
-            </span>
-            <h1 class="hero-title">The Enforcement Year</h1>
-          </div>
+<Layout title="CYBER-BRIEF | Modern Defense">
+    <section class="main-content">
+        
+        <p class="welcome-text">
+            Welcome to the inaugural issue of Cyber-Brief.
+        </p>
+        
+        <article class="briefing-container">
+            <div class="briefing-content">
+                
+                <span class="label-orange">STRATEGIC BRIEFING</span>
+                
+                <h1 class="briefing-title">The Enforcement Year</h1>
+                
+                <div class="briefing-image-wrapper">
+                    <img src="/src/assets/img/The-Enforcement-Year-rect.png" alt="Tactical Visualization" />
+                </div>
+                
+                <div class="article-body">
+                    <p>
+                        This issue explores how modern defense strategies are being dictated not just by CISOs, but by the actuarial tables of major global underwriters.
+                    </p>
+                </div>
 
-          <div class="w-full max-w-5xl mx-auto px-4 mb-16">
-            <div class="aspect-square md:aspect-video w-full overflow-hidden rounded-lg shadow-xl">
-              <Image 
-                src={heroImage} 
-                alt="Strategic Briefing Visual" 
-                class="w-full h-full object-cover"
-                loading="eager" 
-              />
             </div>
-          </div>
-
-          <article class="content-body text-slate-800 font-sans antialiased">
-            </article>
-
-        </div>
-      </div>
+        </article>
+        
     </section>
-  </main>
 </Layout>

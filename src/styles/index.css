@@ -1,87 +1,163 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500&family=Roboto:wght@400;700;900&family=Blinker:wght@400;600;700&display=swap");
-
-@theme {
-  /* Your custom theme variables can go here later! */
-}
+/* ==========================================
+   1. VARIABLES (Rule #2: All Custom Colors)
+   ========================================== */
 :root {
   --cb-bg-main: #0b0f1a;
-  --cb-bg-surface: #1e293b;
-  --cb-accent: #ee6c4d;
-  --cb-text-primary: #ffffff;
-  --cb-text-secondary: #94a3b8;
-  --cb-border-muted: rgba(255, 255, 255, 0.05);
-  --cb-hover-safe: rgb(7, 211, 44);
+  --cb-bg-card: #f8fafc;
+  --cb-bg-bluf: #d4d4d8;
+  --cb-accent-orange: #ee6c4d;
+
+  --cb-text-white: #ffffff;
+  --cb-text-dark: #0b0f1a;
+  --cb-text-slate: #334155;
+  --cb-text-muted: rgba(255, 255, 255, 0.4);
+
+  --cb-font-header: "Blinker", sans-serif;
+  --cb-font-body: "IBM Plex Sans", sans-serif;
 }
 
-/* Sticky Footer Reset */
-html,
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-}
-
-main {
-  flex: 1;
-}
-
+/* ==========================================
+   2. GLOBAL RESET & BASE
+   ========================================== */
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
-  background: #070707;
-  color: #fff;
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-main {
-  padding: 20px;
+  background-color: var(--cb-bg-main);
+  color: var(--cb-text-white);
+  font-family: var(--cb-font-body);
+  -webkit-font-smoothing: antialiased;
 }
 
-h1 {
-  color: #fff;
-  font-size: 32px;
-  margin-bottom: 12px;
+/* ==========================================
+   3. NAVIGATION (Logo Left / Links Right)
+   ========================================== */
+.nav-container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 2.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-p {
-  color: #d1d5db;
-  font-size: 16px;
-  line-height: 1.6;
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
 }
-.featureSection {
-  background-color: #1f1f1f;
-  padding: 60px 20px;
-  color: #ffffff;
 
+.logo-img {
+  height: 1.5rem;
+  width: auto;
+}
+
+.logo-text {
+  color: var(--cb-text-white);
+  font-family: var(--cb-font-header);
+  font-weight: 900;
+  font-size: 1.25rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.nav-link {
+  color: var(--cb-text-muted);
+  text-decoration: none;
+  font-family: var(--cb-font-header);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+/* ==========================================
+   4. WELCOME TEXT (Centered & Small)
+   ========================================== */
+.welcome-text {
+  text-align: center;
   width: 100%;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+  font-family: var(--cb-font-body);
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: var(--cb-text-white);
 }
 
-.feature-container {
-  max-width: 800px;
-  margin: 0 auto;
+/* ==========================================
+   5. BRIEFING CARD (Centering Applied)
+   ========================================== */
+.briefing-container {
+  width: 92%;
+  max-width: 850px;
+  margin-inline: auto;
+  background-color: var(--cb-bg-card);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 6rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+
+  /* Centers all nested text elements */
   text-align: center;
 }
 
-.feature-title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 20px;
+.briefing-content {
+  padding: 4rem 1.5rem;
 }
 
-.feature-text {
-  font-size: 1.125rem;
-  line-height: 1.7;
-  opacity: 0.9;
+@media (min-width: 768px) {
+  .briefing-content {
+    padding: 6rem 5rem;
+  }
 }
-.briefing-gradient {
-  background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
-  /* Add your specific hex codes here */
+
+.label-orange {
+  color: var(--cb-accent-orange);
+  font-family: var(--cb-font-header);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.briefing-title {
+  font-family: var(--cb-font-header);
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1.1;
+  color: var(--cb-text-dark);
+  margin-bottom: 2rem;
+}
+
+.briefing-image-wrapper {
+  margin-block: 2.5rem;
+}
+
+.briefing-image-wrapper img {
+  width: 100%;
+  max-width: 600px; /* Optional: keeps image centered and proportional */
+  height: auto;
+  border-radius: 0.5rem;
+  margin-inline: auto;
+  display: block;
+}
+
+.article-body {
+  color: var(--cb-text-slate);
+  line-height: 1.7;
+  font-size: 1.1rem;
+  max-width: 650px; /* Improves readability when centered */
+  margin-inline: auto;
 }
