@@ -60,7 +60,7 @@ const {
         if (label) label.textContent = 'Dark';
       }
 
-      window.toggleTheme = toggleTheme;
+      (window as any).toggleTheme = toggleTheme;
     </script>
   </body>
 </html>

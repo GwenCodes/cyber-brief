@@ -10,7 +10,7 @@ const { briefs } = Astro.props;
       </div>
     </div>
     <div class="grid">
-      {briefs.map((brief) => (
+      {briefs.map((brief: any) => (
         <div class="col-12 sm-col-6">
           <a href={`/intelligence/${brief.slug}`} class="archive-card">
             {brief.data.image && (
