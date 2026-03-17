@@ -1,0 +1,189 @@
+---
+const { title, subtitle, tag, date, image, slug, bluf } = Astro.props;
+---
+<article class="featured">
+  <div class="card-meta">
+    <span class="card-tag">{tag}</span>
+    <span class="card-date">{date}</span>
+  </div>
+  <h2 class="card-h2">{title}</h2>
+  <p class="card-subtitle">{subtitle}</p>
+
+  {image && (
+    <div class="brief-image">
+      <img src={image} alt={title} />
+    </div>
+  )}
+
+  <div class="byline">
+    <div class="byline-avatar">
+      <img src="/img/van-munoz.png" alt="Van Munoz" />
+    </div>
+    <div>
+      <div class="byline-name">Van Munoz</div>
+      <div class="byline-title">Cyber Edge LLC · 25+ years in financial services security</div>
+    </div>
+  </div>
+
+  {bluf && (
+    <div class="bluf">
+      <div class="bluf-label">Bottom Line Up Front</div>
+      <p class="bluf-text">{bluf}</p>
+    </div>
+  )}
+
+  <a href={`/intelligence/${slug}`} class="read-brief">Read the full brief</a>
+</article>
+
+<style>
+  .featured {
+    max-width: 740px;
+    margin: 0 auto;
+    padding: 56px 0 48px;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .card-tag {
+    background: var(--coral-dim);
+    color: var(--coral);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    border: 1px solid rgba(224,90,56,0.3);
+  }
+
+  .card-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--text-dim);
+    letter-spacing: 0.06em;
+    transition: color 0.3s;
+  }
+
+  .card-h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--heading);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+
+  .card-subtitle {
+    font-size: 20px;
+    color: var(--body-text);
+    margin-bottom: 28px;
+    line-height: 1.5;
+    transition: color 0.3s;
+  }
+
+  .brief-image {
+    width: 100%;
+    aspect-ratio: 16/7;
+    border-radius: 6px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    border: 1px solid var(--border-bright);
+  }
+
+  .brief-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .byline {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--border);
+    transition: border-color 0.3s;
+  }
+
+  .byline-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--bg3);
+    border: 1px solid var(--border-bright);
+    flex-shrink: 0;
+  }
+
+  .byline-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .byline-name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--heading);
+    line-height: 1.3;
+    transition: color 0.3s;
+  }
+
+  .byline-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    transition: color 0.3s;
+  }
+
+  .bluf {
+    background: var(--bg2);
+    border-left: 3px solid var(--coral);
+    padding: 20px 24px;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 36px;
+    transition: background 0.3s;
+  }
+
+  .bluf-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 10px;
+  }
+
+  .bluf-text {
+    font-size: 16px;
+    color: var(--body-text);
+    line-height: 1.75;
+    transition: color 0.3s;
+  }
+
+  .read-brief {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--coral);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(224,90,56,0.4);
+    padding-bottom: 3px;
+    transition: border-color 0.2s;
+  }
+
+  .read-brief::after { content: '→'; }
+  .read-brief:hover { border-color: var(--coral); }
+</style>
