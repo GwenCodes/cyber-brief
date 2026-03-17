@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const allBriefs = await getCollection('briefs');
+const sorted = allBriefs.sort((a, b) =>
+  new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<Layout
+  title="Intelligence Briefings | Cyber-Brief"
+  description="All strategic cybersecurity briefings for financial services leaders. Verified, sourced, and written for decision-makers."
+>
+  <Nav />
+
+  <div class="page">
+    <div class="page-header">
+      <div class="page-eyebrow">
+        <div class="eyebrow-line"></div>
+        <span class="eyebrow-text">All Briefings</span>
+      </div>
+      <h1>Intelligence Briefings</h1>
+      <p>Every strategic brief, sourced and verified for financial services decision-makers.</p>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="grid">
+      {sorted.map((brief: any) => (
+        <div class="col-12 sm-col-6">
+          <a href={`/intelligence/${brief.id}`} class="archive-card">
+            {brief.data.image && (
+              <div class="archive-thumb">
+                <img src={brief.data.image} alt={brief.data.title} />
+              </div>
+            )}
+            <div class="card-meta">
+              <span class="card-tag">{brief.data.tag}</span>
+              <span class="card-date">{brief.data.date}</span>
+            </div>
+            <h2 class="archive-h3">{brief.data.title}</h2>
+            <p class="archive-excerpt">{brief.data.description}</p>
+            <div class="archive-footer">
+              <span class="read-link">Read brief →</span>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .page-header {
+    padding: 80px 0 56px;
+    max-width: 680px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .page-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: var(--coral);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--coral);
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--heading);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+
+  .page-header p {
+    font-size: 18px;
+    color: var(--body-text);
+    line-height: 1.75;
+    transition: color 0.3s;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 16px;
+    padding-bottom: 56px;
+  }
+
+  .col-12 { grid-column: span 12; }
+
+  @media (min-width: 640px) {
+    .sm-col-6 { grid-column: span 6; }
+  }
+
+  .archive-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 28px;
+    text-decoration: none;
+    display: block;
+    transition: border-color 0.2s, background 0.3s;
+  }
+
+  .archive-card:hover { border-color: var(--border-bright); }
+
+  .archive-thumb {
+    width: 100%;
+    aspect-ratio: 16/7;
+    background: var(--bg3);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .archive-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .card-tag {
+    background: var(--coral-dim);
+    color: var(--coral);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 2px;
+    border: 1px solid rgba(224,90,56,0.3);
+  }
+
+  .card-date {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    transition: color 0.3s;
+  }
+
+  .archive-h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: var(--heading);
+    margin-bottom: 10px;
+    transition: color 0.3s;
+  }
+
+  .archive-excerpt {
+    font-size: 15px;
+    color: var(--body-text);
+    line-height: 1.65;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+
+  .archive-footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .read-link {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--coral);
+  }
+</style>
