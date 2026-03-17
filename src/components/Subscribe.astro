@@ -1,0 +1,104 @@
+---
+---
+<section class="protect-section" id="subscribe">
+  <div class="protect-inner">
+    <div class="protect-headline">Protect the <span>Bottom Line.</span></div>
+    <p class="protect-sub">Subscribe to receive high-signal risk intelligence.</p>
+    <form
+      name="subscribe"
+      method="POST"
+      data-netlify="true"
+      class="protect-form"
+    >
+      <input type="hidden" name="form-name" value="subscribe" />
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter work email"
+        required
+      />
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<style>
+  .protect-section {
+    background: var(--bg-protect);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 28px 40px;
+    display: flex;
+    justify-content: center;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .protect-inner {
+    width: 100%;
+    max-width: 560px;
+    text-align: center;
+  }
+
+  .protect-headline {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--heading);
+    margin-bottom: 6px;
+    transition: color 0.3s;
+  }
+
+  .protect-headline span { color: var(--coral); }
+
+  .protect-sub {
+    font-size: 14px;
+    color: var(--body-text);
+    margin-bottom: 16px;
+    line-height: 1.5;
+    transition: color 0.3s;
+  }
+
+  .protect-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .protect-form input {
+    flex: 1;
+    background: var(--bg2);
+    border: 1px solid var(--border-bright);
+    border-radius: 5px;
+    padding: 10px 16px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 14px;
+    color: var(--body-text);
+    outline: none;
+    min-width: 0;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+  }
+
+  .protect-form input::placeholder { color: var(--text-dim); }
+  .protect-form input:focus { border-color: var(--coral); }
+
+  .protect-form button {
+    background: var(--coral);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 22px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+
+  .protect-form button:hover { opacity: 0.85; }
+</style>
