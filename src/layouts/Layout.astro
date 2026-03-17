@@ -1,0 +1,66 @@
+---
+const { 
+  title = 'Cyber-Brief', 
+  description = 'Strategic cybersecurity intelligence for financial services leaders.',
+  image = '/img/og-default.png'
+} = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph for LinkedIn sharing -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:type" content="website" />
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Cyber-Brief",
+        "url": "https://cyber-brief.net",
+        "description": "Strategic cybersecurity intelligence for financial services leaders.",
+        "founder": {
+          "@type": "Person",
+          "name": "Van Munoz",
+          "jobTitle": "Founder",
+          "worksFor": "Cyber Edge LLC"
+        }
+      }
+    </script>
+
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <slot />
+    <script>
+      function toggleTheme() {
+        const body = document.body;
+        const isLight = body.classList.toggle('light');
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        const icon = document.getElementById('toggle-icon');
+        const label = document.getElementById('toggle-label');
+        if (icon) icon.textContent = isLight ? '🌙' : '☀️';
+        if (label) label.textContent = isLight ? 'Dark' : 'Light';
+      }
+
+      // Apply saved theme on page load
+      const saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.body.classList.add('light');
+        const icon = document.getElementById('toggle-icon');
+        const label = document.getElementById('toggle-label');
+        if (icon) icon.textContent = '🌙';
+        if (label) label.textContent = 'Dark';
+      }
+
+      window.toggleTheme = toggleTheme;
+    </script>
+  </body>
+</html>

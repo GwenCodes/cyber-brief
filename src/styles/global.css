@@ -1,1 +1,32 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --max-w: 1200px;
+  --bg: #0D1117;
+  --bg2: #141B24;
+  --bg3: #1C2530;
+  --bg-protect: #111820;
+  --coral: #E05A38;
+  --coral-dim: rgba(224,90,56,0.15);
+  --heading: #E8E2D9;
+  --body-text: #B0B8C4;
+  --text-dim: #6A7280;
+  --border: rgba(232,226,217,0.08);
+  --border-bright: rgba(232,226,217,0.18);
+  --nav-bg: rgba(13,17,23,0.97);
+}
+
+body.light {
+  --bg: #F7F7F7;
+  --bg2: #ECECEC;
+  --bg3: #E2E2E2;
+  --bg-protect: #EAEAEA;
+  --heading: #141413;
+  --body-text: #262624;
+  --text-dim: #737370;
+  --border: rgba(20,20,19,0.1);
+  --border-bright: rgba(20,20,19,0.2);
