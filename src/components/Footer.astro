@@ -1,0 +1,161 @@
+---
+---
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="nav-logo" href="/">
+        <div class="logo-mark">
+          <svg viewBox="0 0 18 18" fill="none">
+            <rect x="2" y="2" width="6" height="6" fill="white" opacity="0.9"/>
+            <rect x="10" y="2" width="6" height="6" fill="white" opacity="0.5"/>
+            <rect x="2" y="10" width="6" height="6" fill="white" opacity="0.5"/>
+            <rect x="10" y="10" width="6" height="6" fill="white" opacity="0.9"/>
+          </svg>
+        </div>
+        <span class="logo-text">Cyber<span>-</span>Brief</span>
+      </a>
+      <p>Strategic cybersecurity intelligence for financial services leaders. Verified, sourced, and written for decision-makers.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Content</h4>
+      <ul>
+        <li><a href="/intelligence">Intelligence Briefings</a></li>
+        <li><a href="#subscribe">Subscribe</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="/about">About Van Munoz</a></li>
+        <li><a href="/about">Cyber Edge LLC</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <ul>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Use</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Cyber-Brief · Operational Resilience for the Modern Defense</p>
+    <div class="compliance-badges">
+      <span class="badge">FINRA</span>
+      <span class="badge">SEC</span>
+      <span class="badge">SOC 2</span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+    margin-top: 16px;
+    transition: border-color 0.3s;
+  }
+
+  .footer-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 48px 40px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+  }
+
+  .footer-brand .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    margin-bottom: 14px;
+  }
+
+  .logo-mark {
+    width: 32px;
+    height: 32px;
+    background: var(--coral);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .logo-mark svg { width: 18px; height: 18px; }
+
+  .logo-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--heading);
+    transition: color 0.3s;
+  }
+
+  .logo-text span { color: var(--coral); }
+
+  .footer-brand p {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.75;
+    max-width: 280px;
+    transition: color 0.3s;
+  }
+
+  .footer-col h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+    transition: color 0.3s;
+  }
+
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+
+  .footer-col ul li a {
+    font-size: 14px;
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul li a:hover { color: var(--heading); }
+
+  .footer-bottom {
+    border-top: 1px solid var(--border);
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s;
+  }
+
+  .footer-bottom p {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    transition: color 0.3s;
+  }
+
+  .compliance-badges { display: flex; gap: 10px; }
+
+  .badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 2px;
+    transition: color 0.3s, border-color 0.3s;
+  }
+</style>
