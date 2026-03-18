@@ -59,9 +59,3 @@ h4 {
 p {
   transition: color 0.3s;
 }
-
-.page {
-  max-width: var(--max-w);
-  margin: 0 auto;
-  padding: 0 40px;
-}
