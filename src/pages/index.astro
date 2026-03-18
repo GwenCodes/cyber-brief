@@ -20,12 +20,11 @@ const archive = sorted.slice(1);
   title="Cyber-Brief | Strategic Risk Intelligence for Financial Leaders"
   description="High-signal cybersecurity briefings written for CISOs, executives, and board members navigating governance, compliance, and emerging threats in financial services."
 >
-  <Nav />
+  <div>
+    <Nav />
+    <Hero />
 
-  <Hero />
-
-  <div style="border-bottom: 1px solid var(--border);">
-    <div class="page">
+    <div class="border-b border-white/10">
       <div class="section-header">
         <div class="section-title">
           <div class="section-title-line"></div>
@@ -34,9 +33,7 @@ const archive = sorted.slice(1);
         <a href="/intelligence" class="section-link">View all briefs →</a>
       </div>
     </div>
-  </div>
 
-  <div class="page">
     <BriefCard
       title={latest.data.title}
       subtitle={latest.data.subtitle}
@@ -46,13 +43,13 @@ const archive = sorted.slice(1);
       slug={latest.id}
       bluf={latest.data.bluf}
     />
+
+    <Subscribe />
+
+    {archive.length > 0 && <ArchiveGrid briefs={archive} />}
+
+    <Footer />
   </div>
-
-  <Subscribe />
-
-  {archive.length > 0 && <ArchiveGrid briefs={archive} />}
-
-  <Footer />
 </Layout>
 
 <style>
