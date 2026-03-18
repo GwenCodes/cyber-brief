@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Terms of Use | Cyber-Brief"
+  description="Terms of use for Cyber-Brief intelligence briefings."
+>
+  <Nav />
+
+  <div class="page">
+    <div class="legal-wrap">
+
+      <div class="page-header">
+        <div class="page-eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">Legal</span>
+        </div>
+        <h1>Terms of Use</h1>
+        <p class="last-updated">Last updated: March 2026</p>
+      </div>
+
+      <div class="legal-content">
+
+        <h2>Acceptance of Terms</h2>
+        <p>By accessing or subscribing to Cyber-Brief, you agree to be bound by these terms of use. If you do not agree, please do not use this site or subscribe to our briefings.</p>
+
+        <h2>Content and Intellectual Property</h2>
+        <p>All content published on Cyber-Brief — including intelligence briefings, analysis, and commentary — is the intellectual property of Cyber Edge LLC. You may not reproduce, distribute, or republish any content without prior written permission.</p>
+
+        <h2>For Informational Purposes Only</h2>
+        <p>Cyber-Brief intelligence briefings are provided for informational purposes only. Nothing published by Cyber-Brief constitutes legal, financial, compliance, or regulatory advice. Readers should consult qualified professionals before making decisions based on any information contained in our briefings.</p>
+
+        <h2>No Warranty</h2>
+        <p>While every effort is made to ensure accuracy, Cyber-Brief makes no warranty — express or implied — regarding the completeness, accuracy, or fitness for purpose of any content published. The cybersecurity and regulatory landscape changes rapidly and briefings reflect information available at the time of publication.</p>
+
+        <h2>Limitation of Liability</h2>
+        <p>Cyber Edge LLC shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of Cyber-Brief content or reliance on any information contained therein.</p>
+
+        <h2>External Links</h2>
+        <p>Cyber-Brief may link to external sources for reference. We do not endorse and are not responsible for the content of external websites.</p>
+
+        <h2>Changes to Terms</h2>
+        <p>These terms may be updated at any time. Continued use of Cyber-Brief following any changes constitutes acceptance of the revised terms.</p>
+
+        <h2>Contact</h2>
+        <p>Questions about these terms may be directed to Cyber Edge LLC via the contact information on our About page.</p>
+
+      </div>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-wrap { padding-bottom: 80px; }
+
+  .page-header {
+    padding: 80px 0 48px;
+    max-width: 680px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 56px;
+    transition: border-color 0.3s;
+  }
+
+  .page-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: var(--coral);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--coral);
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--heading);
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+
+  .last-updated {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+    transition: color 0.3s;
+  }
+
+  .legal-content { max-width: 680px; }
+
+  .legal-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 40px 0 14px;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+
+  .legal-content h2:first-child { margin-top: 0; }
+
+  .legal-content p {
+    font-size: 17px;
+    color: var(--body-text);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    transition: color 0.3s;
+  }
+</style>

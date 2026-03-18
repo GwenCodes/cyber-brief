@@ -1,0 +1,243 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Subscribe from '../components/Subscribe.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="About | Cyber-Brief"
+  description="Cyber-Brief is written by Van Munoz, founder of Cyber Edge LLC and a practitioner with over 25 years leading information security initiatives across financial services."
+>
+  <Nav />
+
+  <div class="page">
+    <div class="about-wrap">
+
+      <div class="page-header">
+        <div class="page-eyebrow">
+          <div class="eyebrow-line"></div>
+          <span class="eyebrow-text">About</span>
+        </div>
+        <h1>Cyber intelligence for financial service leaders.</h1>
+        <p>Cyber-Brief exists for the CISOs, executives, and board members who need to stay ahead of the governance, risk management, and compliance landscape.</p>
+      </div>
+
+      <div class="about-body">
+        <div class="about-text">
+          <p>Every issue is verified, sourced, and written for decision-makers. We translate what's happening in cyber governance into what it means for your organization, your exposure, and your next conversation with the board.</p>
+
+          <h2>Who's behind it</h2>
+          <p>Cyber-Brief is written by Van Munoz, founder of Cyber Edge LLC and a practitioner with over 25 years leading information security initiatives across financial services, insurance, and critical infrastructure.</p>
+          <p>He's worked alongside the leadership teams making these decisions — navigating regulatory frameworks, guiding organizations through audits, and helping translate risk into terms that drive action.</p>
+
+          <h2>The mission</h2>
+          <p>Most cybersecurity content is written for practitioners. Cyber-Brief is written for the people those practitioners report to — executives and board members who need high-signal intelligence without the technical noise.</p>
+          <p>Every brief is built around a single question: <strong>what does this mean for your organization?</strong></p>
+        </div>
+
+        <div class="about-profile">
+          <div class="profile-image">
+            <img src="/img/cyber-edge-profile.png" alt="Van Munoz — Cyber Edge LLC" />
+          </div>
+          <div class="profile-card">
+            <div class="profile-name">Van Munoz</div>
+            <div class="profile-title">Founder, Cyber Edge LLC</div>
+            <div class="profile-divider"></div>
+            <ul class="profile-credentials">
+              <li>25+ years in information security</li>
+              <li>Financial services & insurance</li>
+              <li>Critical infrastructure</li>
+              <li>Regulatory frameworks & audits</li>
+              <li>Board-level risk communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <Subscribe />
+  <Footer />
+</Layout>
+
+<style>
+  .about-wrap {
+    padding-bottom: 56px;
+  }
+
+  .page-header {
+    padding: 80px 0 56px;
+    max-width: 680px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 64px;
+    transition: border-color 0.3s;
+  }
+
+  .page-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .eyebrow-line {
+    width: 28px;
+    height: 1px;
+    background: var(--coral);
+    flex-shrink: 0;
+  }
+
+  .eyebrow-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--coral);
+  }
+
+  .page-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--heading);
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+
+  .page-header p {
+    font-size: 18px;
+    color: var(--body-text);
+    line-height: 1.75;
+    transition: color 0.3s;
+  }
+
+  .about-body {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 80px;
+    align-items: start;
+  }
+
+  .about-text h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--heading);
+    margin: 40px 0 16px;
+    letter-spacing: -0.01em;
+    transition: color 0.3s;
+  }
+
+  .about-text p {
+    font-size: 17px;
+    color: var(--body-text);
+    line-height: 1.8;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+
+  .about-text strong {
+    color: var(--heading);
+    font-weight: 600;
+  }
+
+  .about-profile {
+    position: sticky;
+    top: 88px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .profile-image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-bright);
+    background: var(--bg3);
+    transition: border-color 0.3s;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .profile-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 24px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--heading);
+    margin-bottom: 4px;
+    transition: color 0.3s;
+  }
+
+  .profile-title {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--coral);
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+
+  .profile-divider {
+    height: 1px;
+    background: var(--border);
+    margin-bottom: 16px;
+    transition: background 0.3s;
+  }
+
+  .profile-credentials {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .profile-credentials li {
+    font-size: 14px;
+    color: var(--body-text);
+    padding-left: 16px;
+    position: relative;
+    transition: color 0.3s;
+  }
+
+  .profile-credentials li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 5px;
+    height: 1px;
+    background: var(--coral);
+  }
+
+  @media (max-width: 768px) {
+    .about-body {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .about-profile {
+      position: static;
+    }
+
+    .profile-image {
+      aspect-ratio: 3/2;
+    }
+  }
+</style>
