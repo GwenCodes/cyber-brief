@@ -4,7 +4,7 @@ subtitle: "Stopping Data Leaks in the Age of Autonomous Agents"
 description: "How financial firms can audit and govern unauthorized AI tool usage before regulators do it for them."
 date: "March 2026"
 tag: "Shadow AI"
-image: "/img/shadow-ai-audit.png"
+image: "/images/Shadow-AI-Audit.png"
 bluf: "Productivity is winning the war against security. The stakes have shifted from simple data leaks to unauthorized corporate actions — and traditional tools are context-blind to AI traffic."
 ---
 

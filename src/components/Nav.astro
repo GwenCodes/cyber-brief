@@ -4,21 +4,17 @@
   <div class="nav-inner">
     <a class="nav-logo" href="/">
       <div class="logo-mark">
-        <svg viewBox="0 0 18 18" fill="none">
-          <rect x="2" y="2" width="6" height="6" fill="white" opacity="0.9"/>
-          <rect x="10" y="2" width="6" height="6" fill="white" opacity="0.5"/>
-          <rect x="2" y="10" width="6" height="6" fill="white" opacity="0.5"/>
-          <rect x="10" y="10" width="6" height="6" fill="white" opacity="0.9"/>
-        </svg>
+        <img src="/images/cyber-brief-logo-corral.png" alt="Cyber-Brief Logo">
       </div>
+
       <span class="logo-text">Cyber<span>-</span>Brief</span>
     </a>
     <div class="nav-right">
       <ul class="nav-links">
         <li><a href="/intelligence">Intelligence</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="#subscribe" class="nav-cta">Subscribe</a></li>
+        <li><a href="/about">About</a></li>                
       </ul>
+      
       <button class="theme-toggle" onclick="toggleTheme()">
         <span class="toggle-icon" id="toggle-icon">☀️</span>
         <span id="toggle-label">Light</span>
@@ -26,7 +22,6 @@
     </div>
   </div>
 </nav>
-
 <style>
   nav {
     border-bottom: 1px solid var(--border);
@@ -37,6 +32,7 @@
     transition: background 0.3s, border-color 0.3s;
   }
 
+  /* NAV INNER WRAPPER */
   .nav-inner {
     width: 100%;
     max-width: var(--max-w);
@@ -47,6 +43,7 @@
     height: 100%;
   }
 
+  /* LOGO AREA */
   .nav-logo {
     display: flex;
     align-items: center;
@@ -55,16 +52,16 @@
   }
 
   .logo-mark {
-    width: 32px;
-    height: 32px;
-    background: var(--coral);
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: auto;
+    height: auto;
+    background: none;
+    padding: 0;
   }
 
-  .logo-mark svg { width: 18px; height: 18px; }
+  .logo-mark img {
+    height: 36px;   /* perfect for a 64px nav bar */
+    width: auto;
+  }
 
   .logo-text {
     font-family: 'IBM Plex Mono', monospace;
@@ -76,16 +73,20 @@
     transition: color 0.3s;
   }
 
-  .logo-text span { color: var(--coral); }
+  .logo-text span {
+    color: var(--coral);
+  }
 
+  /* RIGHT SIDE OF NAV */
   .nav-right {
     display: flex;
     align-items: center;
     gap: 24px;
   }
 
+  /* NAV LINKS — HIDDEN ON MOBILE */
   .nav-links {
-    display: flex;
+    display: none; /* mobile default */
     align-items: center;
     gap: 32px;
     list-style: none;
@@ -101,18 +102,19 @@
     transition: color 0.3s;
   }
 
-  .nav-links a:hover { color: var(--heading); }
-
-  .nav-cta {
-    background: var(--coral);
-    color: #fff !important;
-    padding: 8px 18px;
-    border-radius: 3px;
-    transition: opacity 0.2s !important;
+  .nav-links a:hover {
+    color: var(--heading);
   }
 
-  .nav-cta:hover { opacity: 0.85; }
+  /* SHOW NAV LINKS ON TABLET AND UP */
+  @media (min-width: 640px) {
+    .nav-links {
+      display: flex;
+    }
+  }
 
+
+  /* THEME TOGGLE */
   .theme-toggle {
     background: var(--bg2);
     border: 1px solid var(--border-bright);
@@ -130,5 +132,8 @@
     transition: background 0.3s, border-color 0.3s, color 0.3s;
   }
 
-  .toggle-icon { font-size: 13px; line-height: 1; }
+  .toggle-icon {
+    font-size: 13px;
+    line-height: 1;
+  }
 </style>

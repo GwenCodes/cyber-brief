@@ -36,17 +36,29 @@
 
 <style>
   footer {
-    margin-top: 16px;
-    transition: border-color 0.3s;
-  }
+  margin-top: 16px;
+  transition: border-color 0.3s;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden; /* prevents page from widening */
+}
 
-  .footer-inner { 
-    display: grid;
-    flex: auto;
-    grid-template-columns: repeat(3, max-content);
-    justify-content: center;
-    gap: 9rem;
+/* MOBILE-FIRST LAYOUT */
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr;   /* 1 column on mobile */
+  gap: 2rem;                    /* smaller gap so it fits */
+  justify-items: center;        /* centers each column */
+}
+
+/* TABLET- DESKTOP (≥ 1024px) */
+@media (min-width: 640px) {
+  .footer-inner {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 2rem;
   }
+}
+
   
   .footer-brand .nav-logo {
     display: flex;
